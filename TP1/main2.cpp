@@ -34,17 +34,19 @@ class etudiant : public personne
 
 void denomer(personne p)
 {
-    std::cout<<p.nom<<" "<<p.prenom<<std::endl;
+    
+    std::cout<<p.nom<<" "<<p.prenom<<std::endl; // print leur nom et leur prénom
 }
 int main()
 {
+// crée des étudiants
 etudiant A("Franck","Ribery",2);
 etudiant B("Einstein","Albert",18);
 personne C("Huster","Francis");
 std::list<personne> L;
-L.push_back(A);
+L.push_back(A); // push a la fin de la liste
 L.push_front(B);
-L.push_front(C);
+L.push_front(C); // push devant la lise
 for(personne p : L)
 denomer(p);
 return 0;
