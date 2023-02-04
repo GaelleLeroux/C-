@@ -7,6 +7,15 @@ int main()
 {
     std::vector<int> V = {1,4,7,8,2};
     std::list<std::string> const L = {"this","is","a short","text"};
+    std::list<std::string> L2 = {"Gaelle","Capucine","Mathieu", "Tancrede"};
+
+    // passage par référence
+    // modification possible des valeurs
+    for (auto& valeur : L2){
+        valeur[1] = valeur[1] + 1;
+        std::cout<<valeur<<" ";
+    }
+    std::cout<<std::endl;
 
     //passage par copie
     //modification impossible des valeurs
