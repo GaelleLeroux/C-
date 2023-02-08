@@ -21,6 +21,7 @@ int main (){
     // Test différent affichage
 
     cout<<mon_vecteur[0]+" "+mon_vecteur[1]+" "+mon_vecteur[2]+" "+mon_vecteur[3]+" "+mon_vecteur[4]<<endl;
+    
     for(auto it=mon_vecteur.begin(),it_end=mon_vecteur.end();it!=it_end;++it){
         cout<<*it<<" ";
     }
