@@ -8,7 +8,8 @@ using std::endl;
 
 int main(){
     list<int> A = {1,2,3,4,5,6,7,8};
-    A.remove(3);
+    auto u = A.begin();
+    A.erase(u+2);
     for (auto& valeur : A){
         cout<<valeur<<" ";
     }
