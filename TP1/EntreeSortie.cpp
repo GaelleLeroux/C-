@@ -5,18 +5,20 @@ using std::ofstream;
 using std::ifstream;
 using std::cout;
 using std::endl;
+using std::string;
 
 int main(){
     ofstream file("test.txt");
 
     
     
-    file<<"Bonjour le monde"<<endl;
+    file<<"Bonjour le monde c'est moi"<<endl;
     file<<5<<endl;
 
     file.close();
       
-    ifstream file("test.txt");
+    ifstream fichier("test.txt");
+    string ligne;
 
     while(getline(fichier, ligne)) //Tant qu'on n'est pas à la fin, on lit
       {
@@ -26,5 +28,6 @@ int main(){
          //À vous de voir
       }
 
+   
 
 }
