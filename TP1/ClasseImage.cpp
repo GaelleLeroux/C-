@@ -186,12 +186,13 @@ struct image load_image(string nom){
 
 
  
-            Nx = (int) ligne[1];
+            Nx = stoi(N1);
 
 
             int i=0;
             cout<<"salut"<<endl;
-            ima.Nx = stoi(ligne[1]);
+            cout<<Nx<<endl;
+            cout<<N1<<endl;
             string u ;
             u = ligne[i];
             cout<<"coucou"<<endl;
