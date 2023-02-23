@@ -10,6 +10,7 @@ using std::cout;
 using std::endl;
 using std::string;
 using std::pow;
+using std::vector;
 
 struct color
 {
@@ -139,6 +140,74 @@ void degrader(int Nx,int Ny,int rayon,int epais){
     save_image("degrade",ima);
 }
 
+void tokenize(std::string const &str, const char delim,
+            std::vector<std::string> &out)
+{
+    size_t start;
+    size_t end = 0;
+ 
+    while ((start = str.find_first_not_of(delim, end)) != std::string::npos)
+    {
+        end = str.find(delim, start);
+        out.push_back(str.substr(start, end - start));
+    }
+}
+
+
+struct image load_image(string nom){
+    ifstream fichier(nom);
+    string ligne;
+    string mot;
+    image ima;
+    string N1;
+    string N2;
+    int Nx =0;
+    int Ny=0;
+    int u=0;
+    while(getline(fichier, ligne)) //Tant qu'on n'est pas à la fin, on lit
+      {
+        u=u+1;
+        if (u==3){
+            cout<<ligne<<endl;
+            const char delim = ' ';
+            
+            std::vector<std::string> out;
+            tokenize(ligne, delim, out);
+        
+            for (auto &s: out) {
+                if (u==3){
+                    N1 = (string) s;
+                }
+                if(u==4){
+                    N2 = (string) s;
+                }
+                u=u+1;
+            }
+
+
+ 
+            Nx = (int) ligne[1];
+
+
+            int i=0;
+            cout<<"salut"<<endl;
+            ima.Nx = stoi(ligne[1]);
+            string u ;
+            u = ligne[i];
+            cout<<"coucou"<<endl;
+            cout<<N1<<endl;
+            cout<<N2<<endl;
+            cout<<Nx<<endl;
+            cout<<ligne<<endl;
+            cout<<"abc"<<endl;
+            ima.resize(Nx,Ny);
+        }
+
+      }
+    return ima;
+}
+
+
 int main(){
     image im;
     im.resize(3,2);
@@ -153,4 +222,7 @@ int main(){
     save_image("1_image",im);
     image_gris(11);
     degrader(100,100,25,3);
+    struct image ima = load_image("soleil.ppm");
+    cout << ima.Nx << " ";
+    cout << ima.Ny << endl;
 }
