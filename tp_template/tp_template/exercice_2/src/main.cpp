@@ -1,24 +1,17 @@
 #include <iostream>
 #include "bezier.hpp"
 
-#include "export_matlab.hpp"
+#include "export_matlab.hpp"  
 
-std::ostream& operator<<(std::ostream& s, bezier const& b){
-    s<<"(1-s)^3*"<<b.coeff(0)<<"+3s(1-s)^2*"<<b.coeff(1)<<"+3s^2(1-s)*"<<b.coeff(2)<<"+s^3*"<<b.coeff(3);
-    return s;
-}
 
-std::ostream& operator<<(std::ostream& s, bezier& b){
-    s<<"(1-s)^3*"<<b.coeff(0)<<"+3s(1-s)^2*"<<b.coeff(1)<<"+3s^2(1-s)*"<<b.coeff(2)<<"+s^3*"<<b.coeff(3);
-    return s;
-}    
+
 
 int main()
 {
     //Call empty constructor
-    bezier b0;
+    bezier<float> b0;
     //Build a bezier with control polygon given by [P0,P1,P2,P3]
-    bezier const b1(0.0f,1.0f,1.1f,0.15f);
+    bezier<float> const b1(0.0f,1.0f,1.1f,0.15f);
 
     float const P0 = b1.coeff(0); //get P0
     float const P1 = b1.coeff(1); //get P1
