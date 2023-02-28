@@ -44,11 +44,15 @@ int main()
     bezier<vec2> b(vec2(0,0),vec2(1,1),vec2(0,1.5),vec2(-1,0.5));
     export_matlab("data.m",b);
 
-    vec2 p1 = b.closest_point(-100,-100);
+    std::cout<<"test"<<std::endl;
+    vec2 pd (0.5,1);
+    vec2 p1 = b.closest_point(pd);
     std::cout<<p1<<std::endl;
 
-    p1 = b.closest_point(100,100);
+    pd = vec2(-1,-1);
+    p1 = b.closest_point(pd);
     std::cout<<p1<<std::endl;
+    
 
     return 0;
 }

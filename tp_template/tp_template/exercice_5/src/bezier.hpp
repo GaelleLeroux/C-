@@ -1,12 +1,14 @@
 #include <iostream>
 #include <math.h>
+#include "geometrical_object.hpp"
+#include "vec2.hpp"
 
 #ifndef BEZIER_HPP
 #define BEZIER_HPP
 
 
 template <typename T>
-class bezier {
+class bezier : public geometrical_object {
 
     public :
     bezier():P(){};
@@ -25,24 +27,25 @@ class bezier {
         return  coeff(0)*(1-k)*(1-k)*(1-k) + 3*coeff(1)*(1-k)*(1-k)*k + 3*coeff(2)*(1-k)*k*k + coeff(3)*k*k*k;
     }
 
-    T closest_point(float x,float y) const{
-        int N = 10;
-        T p1 = coeff(0);
-        T p4 = coeff(3);
-        std ::cout<<"coucou"<<std::endl;
-        std ::cout<<p1<<std::endl;
-        std ::cout<<p4<<std::endl;
-        std ::cout<<"coucou"<<std::endl;
-        float pas = (2)/N;
-        float dist = pow((x-p1.x)*(x-p1.x)+(y-p1.y)*(y-p1.y),0.5);
-        for (float i=-1;i<1;i=i+pas){
-            float cal = pow((x-i)*(x-i)+(y-(i))*(y-(i)),0.5);
+    vec2 closest_point(vec2 pd) const{
+        int N = 1000;
+        float pas = 1.0f/N;
+        T pp;
+        T ptem;
+        float i=0;
+        ptem = (*this)(i);
+        pp = ptem;
+        float dist = pow((pd.x-ptem.x)*(pd.x-ptem.x)+(pd.y-ptem.y)*(pd.y-ptem.y),0.5);
+        while (i<=1){
+            ptem = (*this)(i);
+            float cal = pow((pd.x-ptem.x)*(pd.x-ptem.x)+(pd.y-ptem.y)*(pd.y-ptem.y),0.5);
             if (cal<dist){
-                p1.x = i;
-                p1.y = (i);
+                dist = cal;
+                pp = ptem;
             }
+            i = i+pas;
         }
-        return p1;
+        return pp;
 
     }
 

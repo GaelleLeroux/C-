@@ -10,7 +10,7 @@
 #include "bezier.hpp"
 
 /** Export a scalar bezier curve into a Matlab compatible file */
-void export_matlab(const std::string& filename,const bezier<float>& b,int sample=100);
+// void export_matlab(const std::string& filename,const bezier<float>& b,int sample=100);
 
 /** Export a vectorial bezier curve into a Matlab compatible file */
 template <typename T>
