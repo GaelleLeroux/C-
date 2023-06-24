@@ -61,6 +61,7 @@
         "list": "cpp",
         "mutex": "cpp",
         "typeindex": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "future": "cpp"
     }
 }

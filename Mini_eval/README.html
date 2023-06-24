@@ -1,0 +1,152 @@
+<p>Cette première évaluation a pour objectif :</p>
+<ul>
+<li>de valider les compétences acquises en cours,</li>
+<li>de vous habituer à la rigueur d'une correction automatique.</li>
+</ul>
+<p>Tout est à développer dans <strong>function.h</strong> et
+<strong>function.cpp</strong>. Il ne faut pas créer de nouveaux
+fichiers! Le fichier <strong>main.cpp</strong> peut contenir une
+fonction <em>main</em> pour vos tests mais ne sert à rien pour
+l'évaluation. Dans <strong>fonction.h</strong>, modifiez la variable
+<strong>QUESTION</strong> (avec le #define) avec le numero de la
+question en cours. Il y a un total de <em>X</em> tests, essayez d'en
+valider un maximum. Le ratio de test valide sur <em>X</em>, vous donnera
+approximativement votre note (les tests d'exemples ne sont pas les
+finaux). Des pénalités peuvent être appliquées, par exemple, si il y a
+des warning à la compilation.</p>
+<p>Pour connaître le nombre de test valide, faites :</p>
+<pre><code>make test &amp;&amp; ./test</code></pre>
+<p>Pour faire votre propre main, faites :</p>
+<pre><code>make main &amp;&amp; ./main</code></pre>
+<p>La dernière ligne resume votre avancé, celles d'avant vous aident à
+savoir d'où viennent les problèmes.</p>
+<ol start="0" type="1">
+<li>(Question exemple, il n'y a rien à faire, si ce n'est d'observer)
+Créez une fonction <strong>factorial</strong> qui retourne la
+factorielle de n, n étant un entier positif -&gt; le cas Factorial(0)
+n'est pas géré (afin de vous montrer le message de test). Il ne faut pas
+tenter de résoudre le problème.</li>
+<li>Créez une fonction <strong>sum</strong> qui prend deux entiers en
+paramètres et renvoie leur somme.</li>
+<li>Créez une fonction <strong>even_squared_sum</strong> qui calcul la
+somme des carrés des <em>n</em> premiers entiers pairs (n étant un
+entier positif) -&gt; pour n = 3, on a : 0, 2, 4.</li>
+<li>Créez une classe <strong>Person</strong></li>
+</ol>
+<ul>
+<li><ol start="4" type="1">
+<li>Ajoutez lui un attribut public de nom <strong>myname</strong> sous
+la forme d'une chaîne de caractère C++.</li>
+</ol></li>
+<li><ol start="5" type="1">
+<li>Ajoutez un constructeur par défaut qui donne comme nom
+<strong>unknown</strong>.</li>
+</ol></li>
+<li><ol start="6" type="1">
+<li>Ajoutez un constructeur qui permet de donner le nom en
+paramètre.</li>
+</ol></li>
+<li><ol start="7" type="1">
+<li>Ajoutez lui une méthode <strong>name</strong> qui ne prend pas de
+paramètre et qui renvoie le nom de la personne , cette méthode ne doit
+pas permettre de changer le nom de la personne</li>
+</ol></li>
+<li><ol start="8" type="1">
+<li>Ajoutez lui une méthode <strong>name</strong> qui ne prend pas de
+paramètre et qui renvoie le nom de la personne, cette méthode doit
+permettre de changer le nom de la personne</li>
+</ol></li>
+</ul>
+<ol start="9" type="1">
+<li>Créez une classe <strong>Student</strong> qui hérite de
+<strong>Person</strong> et qui laisse les attributs public comme
+public.</li>
+<li>Créez une classe de vecteur 2D d'entiers: <strong>ivec2</strong>
+avec :</li>
+</ol>
+<ul>
+<li><ol start="11" type="1">
+<li>deux attributs public <strong>mx</strong> et <strong>my</strong> qui
+sont des entiers</li>
+</ol></li>
+<li><ol start="12" type="1">
+<li>un constructeur par défaut qui met <strong>mx</strong> et
+<strong>my</strong> à 0</li>
+</ol></li>
+<li><ol start="13" type="1">
+<li>un constructeur qui initialise <strong>mx</strong> et
+<strong>my</strong> avec des valeurs données</li>
+</ol></li>
+<li><ol start="14" type="1">
+<li>un getteur <strong>x()</strong> qui renvoie la valeur de
+<strong>mx</strong></li>
+</ol></li>
+<li><ol start="15" type="1">
+<li>un setteur <strong>x()</strong> qui permet de modifier
+<strong>mx</strong> de la manière <strong>v.x() = 1</strong>, v étant un
+ivec2</li>
+</ol></li>
+<li><ol start="16" type="1">
+<li>un opérateur <strong>+</strong> qui permet de faire <strong>v0 +
+v1</strong> et qui renvoie un ivec2 comme étant la somme de
+<strong>v0</strong> et <strong>v1</strong>, ces derniers étant des
+ivec2.</li>
+</ol></li>
+</ul>
+<ol start="17" type="1">
+<li>Ajoutez l'opérateur <strong>&lt;&lt;</strong> qui permet d'ajouter
+le contenu du vecteur dans un flux de sortie de type
+<strong>ostream</strong> quelconque (dont par ex. std::cout fait parti).
+Le format doit-être très exactement <strong>(x,y)</strong> avec
+<strong>x</strong> la valeur du vecteur en mx, de même pour y. On doit
+pouvoir concaténer les chevrons.</li>
+<li>Ajoutez une méthode <strong>dot(v0,v1)</strong> qui renvoie le
+produit scalaire entre deux vecteurs <strong>v0</strong> et
+<strong>v1</strong> étant des ivec2.</li>
+<li>Créez une classe template de vecteur d'entiers en nD :
+<strong>ivecN</strong>, <strong>n</strong> étant un entier template avec
+:</li>
+</ol>
+<ul>
+<li><ol start="20" type="1">
+<li>un attribut public <strong>tab</strong> étant un tableau statique
+(comme en C) contenant <strong>n</strong> flottant et qui est initialisé
+à 0 dans le constructeur par défaut.</li>
+</ol></li>
+<li><ol start="21" type="1">
+<li>une méthode <strong>sum_component</strong> qui renvoie la somme de
+tous les termes.</li>
+</ol></li>
+</ul>
+<ol start="22" type="1">
+<li>Créez une classe <strong>vehicle</strong> avec :</li>
+</ol>
+<ul>
+<li><ol start="23" type="1">
+<li>une méthode virtuelle pure <strong>int nb_wheels()
+const</strong>.</li>
+</ol></li>
+</ul>
+<ol start="24" type="1">
+<li>Créez une classe <strong>bike</strong> avec :</li>
+</ol>
+<ul>
+<li><ol start="25" type="1">
+<li>la redéfinition de la méthode de la question 23 pour renvoyer
+<strong>2</strong>.</li>
+</ol></li>
+</ul>
+<ol start="26" type="1">
+<li>Créez une classe <strong>car</strong> avec :</li>
+</ol>
+<ul>
+<li><ol start="27" type="1">
+<li>la redéfinition de la méthode de la question 23 pour renvoyer
+<strong>4</strong>.</li>
+</ol></li>
+</ul>
+<ol start="28" type="1">
+<li>Ajoutez une méthode <strong>check_wheels</strong> qui prend en
+paramètre une référence sur un véhicule et qui renvoie son nombre de
+roues.</li>
+</ol>
